@@ -297,6 +297,11 @@ $ sudo ln -sfn $(brew --prefix java)/libexec/openjdk.jdk /Library/Java/JavaVirtu
   ```
   brew install vim
   ```
+  /!\ if you have not yet installed a Homebrew version of Python, then upon downloading Vim will try to install Python@3.11 alongside it, but unfortunately this version crashes YCM Server. So after installing Vim you will need to install Python@3.10, remove the link to Python3.11 and relink Python3.10:
+  ```
+  brew unlink python@3.11
+  brew unlink python@3.10 && brew link python@3.10
+  ```
 
   - Option 2: Installing [MacVim][]
   
